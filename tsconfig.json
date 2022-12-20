@@ -1,20 +1,12 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "outDir": "dist",
-    "types": ["node"],
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "es5"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "target": "es2020",
+    "module": "CommonJS",
+    "outDir": "./build",
+    "importHelpers": false,
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "incremental": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
