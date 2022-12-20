@@ -1,1 +1,4 @@
 # jestyne
+jestyne is a command-line tool that helps you quickly set up a testing environment for your React components using the Jest testing library. With just a few simple commands, this package will generate a test skeleton for your components, complete with all the necessary imports and boilerplate code. 
+
+Simply point the tool at your component file, and it will create a corresponding test file with a basic test structure in place. This can save you a lot of time and effort when it comes to setting up tests for your React components, and helps ensure that you have a solid foundation for building out your test suite. Whether you're new to testing or an experienced developer, jestyne is a valuable tool that can streamline your testing workflow and help you get up and running with Jest in no time.
