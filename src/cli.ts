@@ -2,13 +2,15 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-
 import handleError from './handleError';
 
+export const epilogue = 'For more information, check README.md';
+
 yargs(hideBin(process.argv))
+  .commandDir('commands')
   .command(
     '$0',
-    'jestyne cli usage',
+    '',
     () => undefined,
     () => {
       yargs.showHelp();
@@ -16,5 +18,5 @@ yargs(hideBin(process.argv))
   )
   .strict()
   .alias({ h: 'help' })
-  .epilogue('For more information, check README.md')
+  .epilogue(epilogue)
   .fail(handleError).argv;

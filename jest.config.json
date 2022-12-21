@@ -1,0 +1,13 @@
+{
+  "transform": {
+    "^.+\\.(t|j)s?$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.(js?|ts?)$",
+  "moduleFileExtensions": ["ts", "js", "json", "node"],
+  "testPathIgnorePatterns": [
+    "<rootDir>/node_modules",
+    "<rootDir>/build",
+    "<rootDir>/__tests__/helpers"
+  ],
+  "collectCoverage": false
+}

@@ -6,7 +6,8 @@
     "importHelpers": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "jsx": "react",
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules"]
 }
