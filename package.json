@@ -1,5 +1,5 @@
 {
-  "name": "jestyne",
+  "name": "@larskemper/jestyne",
   "version": "0.0.1",
   "description": "jestyne generates test skeletons for React components using Jest",
   "module": "CommonJS",
