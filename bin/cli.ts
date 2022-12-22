@@ -4,7 +4,8 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import handleError from './handleError';
 
-export const epilogue = 'For more information, check README.md';
+export const epilogue =
+  'For more information, check https://github.com/LarsKemper/jestyne#readme';
 
 yargs(hideBin(process.argv))
   .commandDir('commands')

@@ -7,23 +7,16 @@ type ExecuteResponse = {
   stderr: string;
 };
 
-export default function execute(
-  cmd: string,
-  args?: string[]
-): Promise<ExecuteResponse> {
+export default function execute(cmd: string): Promise<ExecuteResponse> {
   return new Promise((resolve) => {
-    exec(
-      `npx jestyne ${cmd} ${args && args.join(' ')}`,
-      { cwd: '.' },
-      (error, stdout, stderr) => {
-        resolve({
-          code: error && error.code ? error.code : 0,
-          error,
-          stdout: filterStdout(stdout),
-          stderr,
-        });
-      }
-    );
+    exec(`npx jestyne ${cmd}`, { cwd: '.' }, (error, stdout, stderr) => {
+      resolve({
+        code: error && error.code ? error.code : 0,
+        error,
+        stdout: filterStdout(stdout),
+        stderr,
+      });
+    });
   });
 }
 
