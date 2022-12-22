@@ -10,7 +10,7 @@ const printMessage = (message: string) => {
   );
 };
 
-export default async (message: string, error: Error): Promise<never> => {
+export default (message: string, error: Error): void => {
   if (message) {
     printMessage(message);
     process.exit(1);
@@ -18,13 +18,7 @@ export default async (message: string, error: Error): Promise<never> => {
 
   let errorMessage = 'Unknown error occurred';
 
-  if (error instanceof Response) {
-    const { ErrorMessage } = await error.json();
-
-    if (ErrorMessage) {
-      errorMessage = ErrorMessage;
-    }
-  } else {
+  if (error.message) {
     errorMessage = error.message;
   }
 

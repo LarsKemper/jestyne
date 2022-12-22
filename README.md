@@ -24,8 +24,34 @@ Simply point the tool at your component file, and it will create a corresponding
 |  `npx jestyne --help`   | Shows usage of jestyne         |
 
 ## Examples
+### React component
+```jsx
+import React from 'react';
+
+export default function SimpleComponent() {
+  function simpleFunction(number) {
+    return number + 1;
+  }
+
+  return <div>SimpleComponent: {simpleFunction(2)}</div>;
+}
+```
+
+### Test
+```jsx
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import SimpleComponent from './SimpleComponent'
+
+describe('/__tests__/fixtureSimpleComponent', () => {
+    it('should render SimpleComponent', () => {
+        render(<SimpleComponent />);
+    })}
+);
+```
 
 ## Features
++ Generating basic test structure boilerplate
 
 ## Installation
 Using [npm](https://www.npmjs.com/) (with [Node.js](https://nodejs.org/)):
