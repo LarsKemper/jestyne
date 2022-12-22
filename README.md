@@ -22,6 +22,7 @@ Simply point the tool at your component file, and it will create a corresponding
 |:-----------------------:| ------------------------------ |
 | `npx jestyne --version` | Shows current version of jestyne |
 |  `npx jestyne --help`   | Shows usage of jestyne         |
+| `npx jestyne generate [path]` | Generates test for given component |
 
 ## Examples
 ### React component
