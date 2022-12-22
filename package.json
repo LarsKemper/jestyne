@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "jestyne generates test skeletons for React components using Jest",
   "module": "CommonJS",
-  "main": "build/src/cli.js",
-  "bin": "build/src/cli.js",
+  "main": "build/bin/cli.js",
+  "bin": "build/bin/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LarsKemper/jestyne.git"
@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rimraf build/",
     "prebuild": "npm run clean",
-    "build": "tsc && chmod +x build/src/*.js",
+    "build": "tsc && chmod +x build/bin/*.js",
     "test": "jest --config jest.config.json --maxWorkers=4 --collectCoverage=true --testTimeout=10000 --collectCoverage=false",
     "check:types": "tsc --pretty --noEmit",
     "check:format": "prettier --check .",

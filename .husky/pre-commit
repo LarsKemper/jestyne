@@ -7,6 +7,13 @@ NC='\033[0m'
 
 npm run format
 
+npm run build ||
+(
+    echo "${RED}Build failed. Make the changes required above. ☓${NC}";
+    false;
+)
+echo "${GREEN}Build successful ✓${NC}";
+
 npm run check:format ||
 (
     echo "${RED}Prettier Check Failed. Run npm run format, add changes and try commit again. ☓${NC}";
