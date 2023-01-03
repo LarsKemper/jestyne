@@ -8,8 +8,11 @@ export const description = 'Generate test skeleton for your Component';
 
 export const builder: Builder = (yargs) =>
   yargs
+    .options({
+      force: { type: 'boolean', alias: 'f' },
+    })
     .positional('path', { type: 'string', demandOption: true })
-    .example([['$0 generate ./path/path']]);
+    .example([['$0 generate ./path/path'], ['$0 generate ./path/path --f']]);
 
 export const handler: Handler = async (argv) => {
   // read input file per path
@@ -25,8 +28,6 @@ export const handler: Handler = async (argv) => {
     throw new Error('Please select allowed file type');
   }
 
-  //TODO: check if Components is already tested? Force option to overwrite?
-
   // check if component file exists
   const componentFileBuffer = fs.readFileSync(argv.path);
 
@@ -35,19 +36,31 @@ export const handler: Handler = async (argv) => {
   }
 
   const componentName = inputFile.name;
-  const testPath = inputFile.dir.replace('./', '');
+  const testName = inputFile.dir.replace('./', '');
+  const testPath = `${inputFile.dir}/${inputFile.name}.test${inputFile.ext}`;
+
+  // check if component file already has test file
+  if (!argv.force) {
+    const existingTestFile = fs.readFileSync(testPath);
+
+    if (existingTestFile) {
+      throw new Error(
+        'This component already has an existing test file. Use --f to force generate'
+      );
+    }
+  }
 
   // template args
   const data = {
     componentName,
-    testPath,
+    testName,
   };
 
   // ejs render options
   const options = {};
 
   // read ejs template for test file
-  const templatePath = path.join(__dirname, '../templates/basic.ejs');
+  const templatePath = path.join(__dirname, '../../templates/basic.ejs');
 
   ejs.renderFile(templatePath, data, options, (err, str) => {
     // str = rendered js lines
@@ -56,14 +69,10 @@ export const handler: Handler = async (argv) => {
     }
 
     // write test file
-    fs.writeFile(
-      `${inputFile.dir}/${inputFile.name}.test${inputFile.ext}`,
-      str,
-      (err) => {
-        if (err) {
-          throw Error(err.message);
-        }
+    fs.writeFile(testPath, str, (err) => {
+      if (err) {
+        throw Error(err.message);
       }
-    );
+    });
   });
 };
