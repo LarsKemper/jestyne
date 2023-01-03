@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rimraf build/",
     "prebuild": "npm run clean",
-    "postbuild": "copyfiles --error --up 1 bin/templates/**/*.ejs build",
+    "postbuild": "copyfiles --error --up 1 bin/templates/**/*.ejs build/bin",
     "build": "tsc && chmod +x build/bin/*.js",
     "test": "jest --config jest.config.json --maxWorkers=4 --collectCoverage=true --testTimeout=10000 --collectCoverage=false",
     "check:types": "tsc --pretty --noEmit",
@@ -38,6 +38,7 @@
     "@types/ejs": "^3.1.1",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
+    "@types/rc": "^1.2.1",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "copyfiles": "^2.4.1",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "ejs": "^3.1.8",
+    "rc": "^1.2.8",
     "ts-node": "^10.9.1",
     "yargs": "^17.6.2"
   }
