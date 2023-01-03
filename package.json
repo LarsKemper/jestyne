@@ -1,6 +1,6 @@
 {
   "name": "@larskemper/jestyne",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "jestyne generates test skeletons for React components using Jest",
   "module": "CommonJS",
   "main": "build/bin/cli.js",

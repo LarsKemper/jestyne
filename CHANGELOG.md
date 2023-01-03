@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/LarsKemper/jestyne/compare/v0.0.1...v0.1.0) (2023-01-03)
+
+
+### Features
+
+* **config:** add configuration possibility ([6a2f4ad](https://github.com/LarsKemper/jestyne/commit/6a2f4ad1c0aa841b94060ec142897d8e1490c468))
+* **generate:** add force option ([574269f](https://github.com/LarsKemper/jestyne/commit/574269f08f2c4fd023f79aa007064ec445fd20fe))
+
 ### 0.0.1 (2022-12-22)
 
 
