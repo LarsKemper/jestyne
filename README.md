@@ -51,8 +51,21 @@ describe('/__tests__/fixtureSimpleComponent', () => {
 );
 ```
 
+### Configuration
+You can configure jestyne using an json or ini file with the name '.jestynerc'.
+
+An example json file might look like this:
+```json
+{
+  "fileExtension": ["jsx"] // allowed component file extensions
+}
+``` 
+
+No matter which syntax you choose, it's important to remember that the name of the configuration file must be '.jestynerc', with no extension.
+
 ## Features
 + Generating basic test structure boilerplate
++ Configuration file
 
 ## Installation
 Using [npm](https://www.npmjs.com/) (with [Node.js](https://nodejs.org/)):

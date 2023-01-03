@@ -1,3 +1,6 @@
+# fixtures
+/__tests__/fixture/SimpleComponent.test.jsx
+
 # dependencies
 /node_modules
 /.pnp
