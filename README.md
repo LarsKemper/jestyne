@@ -57,7 +57,9 @@ You can configure jestyne using an json or ini file with the name '.jestynerc'.
 An example json file might look like this:
 ```json
 {
-  "fileExtension": ["jsx"] // allowed component file extensions
+  "fileExtension": ["jsx"] // allowed component file extensions (e.g. "jsx" or "tsx")
+  "onlyBoilerplate": false  // disable AST analyzing / only generate boilerplate code
+  "ecmaVersion": "latest" // js ecma version of analyzed files (e.g. "6", "2022", "latest", ...)
 }
 ``` 
 

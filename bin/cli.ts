@@ -10,6 +10,8 @@ export const epilogue =
 
 export const config = rc('jestyne', {
   fileExtension: ['jsx'],
+  onlyBoilerplate: false,
+  ecmaVersion: 'latest',
 });
 
 yargs(hideBin(process.argv))

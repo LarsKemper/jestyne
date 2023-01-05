@@ -1,3 +1,5 @@
 {
-  "fileExtension": ["jsx"]
+  "fileExtension": ["jsx"],
+  "onlyBoilerplate": false,
+  "ecmaVersion": "latest"
 }

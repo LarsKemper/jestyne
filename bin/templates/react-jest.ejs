@@ -1,0 +1,15 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import <%= componentName %> from './<%= componentName %>';
+
+describe('<%= testName %>/<%= componentName %>', () => {
+    it('should render <%= componentName %>', () => {
+        render(<<%= componentName %> />);
+    });
+
+    <% analyzedData.functionDeclarations.forEach((node) => { %>
+    it('should test <%= node.name %>', () => {
+        render(<<%= componentName %> />);
+    });
+    <% }); %>
+});
